@@ -22,10 +22,13 @@ The functions file contains a variety of custom functions I developed for this t
 
 ### get.clusters.df <- function(df_ts,methods,k) 
 Main utility of this thesis. Takes a dataframe of time series (rows are time series, columns are data points in time series), one or multiple clustering algorithms, and a cluster count `k`. It returns a dataframe (ncol = number of clustering methods, nrow = number of time series) where each column represents the hard partitional (partition around medoids) clustering solution for one of the clustering methods specified. This function calls multiple subordinate functions which are not described in detail here. The methods must exactly match one of the implemented methods. Currently, the implemented and tested methods are: 
-
 - TSclust_methods <- c("ACF","CID","CORT","DWT","LLR","LPC","PDC","PER","PIC")
 - dtwclust_methods <- c("DTW","SBD","GAK","TAD")
 - seqHMM_methods <- c("LCM")
+
+Further untested but technically implemented methods are:
+- TSclust_methods <- c("MAH","FRE","SAX","ISD")
+
 
 A straightforward execution might be:
 ```
